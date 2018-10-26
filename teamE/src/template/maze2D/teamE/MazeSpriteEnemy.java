@@ -16,6 +16,9 @@ public class MazeSpriteEnemy extends Sprite {
 	}
 
 	public void motion(long interval, Map2D mazeGround) {
+
+		setVelocity(0.0,4.5);
+
 		super.motion(interval, mazeGround);;
 	}
 
