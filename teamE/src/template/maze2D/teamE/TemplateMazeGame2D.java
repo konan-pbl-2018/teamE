@@ -73,6 +73,14 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			}
 		}
 		mazeSpritePlayer.motion(interval, mazeGround);
+		mazeSpriteEnemy.motion(interval, mazeGround);
+
+
+		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {
+			System.out.println("ìGÇ∆ê⁄êG");
+			mazeSpritePlayer.setPosition(2.0, 2.0);
+
+		}
 	}
 
 	// public void progress(RWTVirtualController virtualController, long
