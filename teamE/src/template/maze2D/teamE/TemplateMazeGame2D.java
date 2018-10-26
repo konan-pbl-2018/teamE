@@ -45,6 +45,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	public void progress(RWTVirtualController virtualController, long interval) {
 		// 迷路ゲームステージを構成するオブジェクトの位置とプレイヤーの位置をもとに速度を0にするかどうかを調べる。
 		Position2D gridPoint = mazeGround.getNeighborGridPoint(mazeSpritePlayer);
+		Position2D gridPointEB = mazeGround.getNeighborGridPoint(mazeSpriteEnemyB);
 
 		// 速度が0にするフラグが立っていれば、速度を0にする
 		if (gridPoint != null) {
@@ -82,13 +83,13 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemy.motion(interval, mazeGround);
 		mazeSpriteEnemyB.motion(interval, mazeGround);
 
-		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {
+		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//敵（なんぼーくん）と接触した時
 			System.out.println("敵と接触");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
 
 
-	if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {
+		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//敵Bと接触したとき
 		System.out.println("敵と接触");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
