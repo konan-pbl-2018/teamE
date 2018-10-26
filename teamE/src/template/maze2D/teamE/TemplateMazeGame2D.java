@@ -23,7 +23,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
 
-		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\packman.gif");
+		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\pacman_yellow.gif");
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
