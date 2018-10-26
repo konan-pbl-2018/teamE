@@ -1,7 +1,5 @@
 package template.maze2D;
 
-import java.math.BigDecimal;
-
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
 import framework.game2D.Position2D;
@@ -11,12 +9,13 @@ import framework.model3D.Universe;
 public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
-	
+	private MazeSpriteEnemy mazeSpriteEnemy;
+
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
 
 	private long lastTime;
-	
+
 	@Override
 	public void init(Universe universe) {
 		mazeGround = new MazeStage("data\\images\\block.gif", "data\\images\\Tile.gif");
@@ -27,6 +26,12 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
+
+		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\Enemy.gif");
+		mazeSpriteEnemy.setPosition(6.0,6.0);
+		mazeSpriteEnemy.setCollisionRadius(0.5);
+		universe.place(mazeSpriteEnemy);
+
 	}
 
 	@Override
@@ -40,7 +45,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			mazeSpritePlayer.setVelocity(0.0, 0.0);
 			disableControl = false;
 		}
-		
+
 		// キャラが移動していなければ、キー操作の処理を行える。
 		if(!disableControl){
 			// キー操作の処理
@@ -53,7 +58,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			else if (virtualController.isKeyDown(0, RWTVirtualController.RIGHT)) {
 				mazeSpritePlayer.setVelocity(2.0, 0.0);
 				disableControl = true;
-	
+
 			}
 			// 上
 			else if (virtualController.isKeyDown(0, RWTVirtualController.UP)) {
@@ -66,7 +71,19 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 				disableControl = true;
 			}
 		}
+
+
+
 		mazeSpritePlayer.motion(interval, mazeGround);
+		mazeSpriteEnemy.motion(interval, mazeGround);
+
+
+		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {
+			System.out.println("敵と接触");
+			mazeSpritePlayer.setPosition(2.0, 2.0);
+
+		}
+
 	}
 
 	// public void progress(RWTVirtualController virtualController, long
@@ -163,7 +180,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	/**
 	 * ゲームのメイン
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
