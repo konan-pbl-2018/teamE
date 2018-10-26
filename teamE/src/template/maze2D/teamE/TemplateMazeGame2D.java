@@ -33,10 +33,10 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
 
-		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\pacman_teki.png");
-		mazeSpriteEnemy.setPosition(4.0,2.0);
-		mazeSpriteEnemy.setCollisionRadius(0.5);
-		universe.place(mazeSpriteEnemy);
+		mazeSpriteEnemyB= new MazeSpriteEnemyB("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemyB.setPosition(4.0,2.0);
+		mazeSpriteEnemyB.setCollisionRadius(0.5);
+		universe.place(mazeSpriteEnemyB);
 
 		setViewRange(65, 65);
 	}
@@ -80,14 +80,20 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		}
 		mazeSpritePlayer.motion(interval, mazeGround);
 		mazeSpriteEnemy.motion(interval, mazeGround);
-
+		mazeSpriteEnemyB.motion(interval, mazeGround);
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {
 			System.out.println("ìGÇ∆ê⁄êG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
-
 		}
+
+
+	if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {
+		System.out.println("ìGÇ∆ê⁄êG");
+		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
+}
+
 
 	// public void progress(RWTVirtualController virtualController, long
 	// interval) {
