@@ -10,6 +10,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
 	private MazeSpriteEnemy mazeSpriteEnemy;
+	private MazeSpriteEnemyB mazeSpriteEnemyB;
 
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
@@ -22,13 +23,18 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
 
-		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\nambo_big.gif");
+		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\packman.gif");
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
 
-		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\nambo_big.gif");
 		mazeSpriteEnemy.setPosition(6.0,6.0);
+		mazeSpriteEnemy.setCollisionRadius(0.5);
+		universe.place(mazeSpriteEnemy);
+
+		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemy.setPosition(4.0,2.0);
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
 

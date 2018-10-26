@@ -9,9 +9,9 @@ import framework.game2D.Sprite;
  * @author T.Kuno
  *
  */
-public class MazeSpriteEnemy extends Sprite {
+public class MazeSpriteEnemyB extends Sprite {
 
-	public MazeSpriteEnemy(String imageFile) {
+	public MazeSpriteEnemyB(String imageFile) {
 		super(imageFile);
 	}
 
