@@ -9,7 +9,6 @@ import framework.model3D.Universe;
 public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
-	private MazeSpriteEnemy mazeSpriteEnemy;
 
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
@@ -26,11 +25,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
-
-		mazeSpriteEnemy = new MazeSpriteEnemy("data\\RPG\\player.png");
-		mazeSpriteEnemy.setPosition(12.0, 6.0);
-		mazeSpriteEnemy.setCollisionRadius(0.5);
-		universe.place(mazeSpriteEnemy);
+		setViewRange(65, 65);
 	}
 
 	@Override
@@ -50,23 +45,23 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			// キー操作の処理
 			// 左
 			if (virtualController.isKeyDown(0, RWTVirtualController.LEFT)) {
-				mazeSpritePlayer.setVelocity(-2.0, 0.0);
+				mazeSpritePlayer.setVelocity(-4.0, 0.0);
 				disableControl = true;
 			}
 			// 右
 			else if (virtualController.isKeyDown(0, RWTVirtualController.RIGHT)) {
-				mazeSpritePlayer.setVelocity(2.0, 0.0);
+				mazeSpritePlayer.setVelocity(4.0, 0.0);
 				disableControl = true;
 
 			}
 			// 上
 			else if (virtualController.isKeyDown(0, RWTVirtualController.UP)) {
-				mazeSpritePlayer.setVelocity(0.0, 2.0);
+				mazeSpritePlayer.setVelocity(0.0, 4.0);
 				disableControl = true;
 			}
 			// 下
 			else if (virtualController.isKeyDown(0, RWTVirtualController.DOWN)) {
-				mazeSpritePlayer.setVelocity(0.0, -2.0);
+				mazeSpritePlayer.setVelocity(0.0, -4.0);
 				disableControl = true;
 			}
 		}
@@ -160,7 +155,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	@Override
 	public RWTFrame3D createFrame3D() {
 		RWTFrame3D f = new RWTFrame3D();
-		f.setSize(800, 800);
+		f.setSize(1200, 1200);
 		f.setTitle("Template for Mage 2DGame");
 		return f;
 	}
@@ -172,7 +167,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	 */
 	public static void main(String[] args) {
 		TemplateMazeGame2D game = new TemplateMazeGame2D();
-		game.setFramePolicy(5, 33, false);
+		game.setFramePolicy(12, 33, false);
 		game.start();
 	}
 

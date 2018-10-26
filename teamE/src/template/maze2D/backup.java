@@ -8,13 +8,9 @@ import framework.model3D.Universe;
 import template.maze2D.teamE.MazeSpritePlayer;
 import template.maze2D.teamE.MazeStage;
 
-public class TemplateMazeGame2D extends SimpleMazeGame {
+public class backup extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
-
-	private MazeSpriteEnemy mazeSpriteEnemy;
-
-
 
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
@@ -23,20 +19,14 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	@Override
 	public void init(Universe universe) {
-		mazeGround = new MazeStage("data\\images\\E_images\\block.png", "data\\images\\E_images\\midori.png");
+		mazeGround = new MazeStage("data\\images\\block.gif", "data\\images\\Tile.gif");
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
 
-		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\packman.gif");
+		mazeSpritePlayer = new MazeSpritePlayer("data\\RPG\\player.png");
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
-
-		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\Enemy.gif");
-		mazeSpriteEnemy.setPosition(6.0,6.0);
-		mazeSpriteEnemy.setCollisionRadius(0.5);
-		universe.place(mazeSpriteEnemy);
-
 	}
 
 	@Override
@@ -76,19 +66,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 				disableControl = true;
 			}
 		}
-
-
-
 		mazeSpritePlayer.motion(interval, mazeGround);
-		mazeSpriteEnemy.motion(interval, mazeGround);
-
-
-		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {
-			System.out.println("敵と接触");
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-
-		}
-
 	}
 
 	// public void progress(RWTVirtualController virtualController, long
@@ -189,7 +167,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		TemplateMazeGame2D game = new TemplateMazeGame2D();
+		backup game = new backup();
 		game.setFramePolicy(5, 33, false);
 		game.start();
 	}
