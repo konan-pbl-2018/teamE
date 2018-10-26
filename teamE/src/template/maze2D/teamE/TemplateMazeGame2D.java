@@ -9,6 +9,7 @@ import framework.model3D.Universe;
 public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
+	private MazeSpriteEnemy mazeSpriteEnemy;
 
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
@@ -17,14 +18,19 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	@Override
 	public void init(Universe universe) {
-		mazeGround = new MazeStage("data\\images\\block.gif", "data\\images\\Tile.gif");
+		mazeGround = new MazeStage("data\\images\\E_images\\block.png", "data\\images\\E_images\\midori.png");
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
 
-		mazeSpritePlayer = new MazeSpritePlayer("data\\RPG\\player.png");
+		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\nambo_big.gif");
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
+
+		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemy.setPosition(6.0,6.0);
+		mazeSpriteEnemy.setCollisionRadius(0.5);
+		universe.place(mazeSpriteEnemy);
 
 		setViewRange(65, 65);
 	}
