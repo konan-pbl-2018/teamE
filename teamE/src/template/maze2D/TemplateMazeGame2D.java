@@ -5,6 +5,7 @@ import framework.RWT.RWTVirtualController;
 import framework.game2D.Position2D;
 import framework.gameMain.SimpleMazeGame;
 import framework.model3D.Universe;
+import template.maze2D.teamE.MazeSpriteEnemy;
 import template.maze2D.teamE.MazeSpritePlayer;
 import template.maze2D.teamE.MazeStage;
 

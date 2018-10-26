@@ -1,4 +1,4 @@
-package template.maze2D;
+package template.maze2D.teamE;
 
 import framework.game2D.Map2D;
 import framework.game2D.Sprite;
