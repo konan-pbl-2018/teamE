@@ -10,6 +10,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
 	private MazeSpriteEnemy mazeSpriteEnemy;
+	private MazeSpriteEnemyB mazeSpriteEnemyB;
 
 	// ‘¬“x‚É‚æ‚Á‚Ä•¨‘Ì‚ª“®‚¢‚Ä‚¢‚é‚Éƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
 	private boolean disableControl = false;
@@ -22,15 +23,20 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
 
-		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\nambo_big.gif");
+		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\packman.gif");
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
 
-		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\nambo_big.gif");
 		mazeSpriteEnemy.setPosition(6.0,6.0);
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
+
+		mazeSpriteEnemyB= new MazeSpriteEnemyB("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemyB.setPosition(4.0,2.0);
+		mazeSpriteEnemyB.setCollisionRadius(0.5);
+		universe.place(mazeSpriteEnemyB);
 
 		setViewRange(65, 65);
 	}
@@ -74,14 +80,20 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		}
 		mazeSpritePlayer.motion(interval, mazeGround);
 		mazeSpriteEnemy.motion(interval, mazeGround);
-
+		mazeSpriteEnemyB.motion(interval, mazeGround);
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {
 			System.out.println("“G‚ÆÚG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
-
 		}
+
+
+	if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {
+		System.out.println("“G‚ÆÚG");
+		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
+}
+
 
 	// public void progress(RWTVirtualController virtualController, long
 	// interval) {

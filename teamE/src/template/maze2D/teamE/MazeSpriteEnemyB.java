@@ -9,16 +9,13 @@ import framework.game2D.Sprite;
  * @author T.Kuno
  *
  */
-public class MazeSpriteEnemy extends Sprite {
+public class MazeSpriteEnemyB extends Sprite {
 
-	public MazeSpriteEnemy(String imageFile) {
+	public MazeSpriteEnemyB(String imageFile) {
 		super(imageFile);
 	}
 
 	public void motion(long interval, Map2D mazeGround) {
-
-		setVelocity(0.0,4.5);
-
 		super.motion(interval, mazeGround);;
 	}
 
