@@ -5,6 +5,8 @@ import framework.RWT.RWTVirtualController;
 import framework.game2D.Position2D;
 import framework.gameMain.SimpleMazeGame;
 import framework.model3D.Universe;
+import template.maze2D.teamE.MazeSpritePlayer;
+import template.maze2D.teamE.MazeStage;
 
 public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
@@ -21,11 +23,11 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	@Override
 	public void init(Universe universe) {
-		mazeGround = new MazeStage("data\\images\\E_images\\block.png", "data\\images\\E_images\\tx\\êØãÛ (1).png");
+		mazeGround = new MazeStage("data\\images\\E_images\\block.png", "data\\images\\E_images\\midori.png");
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
 
-		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\packman.png");
+		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\packman.gif");
 		mazeSpritePlayer.setPosition(6.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
