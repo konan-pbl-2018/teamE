@@ -1,22 +1,22 @@
 package template.maze2D;
 
-import java.math.BigDecimal;
-
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
 import framework.game2D.Position2D;
 import framework.gameMain.SimpleMazeGame;
 import framework.model3D.Universe;
+import template.maze2D.teamE.MazeSpritePlayer;
+import template.maze2D.teamE.MazeStage;
 
 public class backup extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
 	private MazeStage mazeGround;
-	
+
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
 
 	private long lastTime;
-	
+
 	@Override
 	public void init(Universe universe) {
 		mazeGround = new MazeStage("data\\images\\block.gif", "data\\images\\Tile.gif");
@@ -40,7 +40,7 @@ public class backup extends SimpleMazeGame {
 			mazeSpritePlayer.setVelocity(0.0, 0.0);
 			disableControl = false;
 		}
-		
+
 		// キャラが移動していなければ、キー操作の処理を行える。
 		if(!disableControl){
 			// キー操作の処理
@@ -53,7 +53,7 @@ public class backup extends SimpleMazeGame {
 			else if (virtualController.isKeyDown(0, RWTVirtualController.RIGHT)) {
 				mazeSpritePlayer.setVelocity(2.0, 0.0);
 				disableControl = true;
-	
+
 			}
 			// 上
 			else if (virtualController.isKeyDown(0, RWTVirtualController.UP)) {
@@ -163,7 +163,7 @@ public class backup extends SimpleMazeGame {
 
 	/**
 	 * ゲームのメイン
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
