@@ -28,7 +28,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
 
-		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\nambo_big.gif");
+		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\nambo.gif");
 		mazeSpriteEnemy.setPosition(6.0,6.0);
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
