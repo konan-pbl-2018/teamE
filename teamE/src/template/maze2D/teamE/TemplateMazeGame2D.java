@@ -79,6 +79,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 				disableControl = true;
 			}
 		}
+		mazeSpriteEnemyB.setVelocity(0.0, 0.0);
 		mazeSpritePlayer.motion(interval, mazeGround);
 		mazeSpriteEnemy.motion(interval, mazeGround);
 		mazeSpriteEnemyB.motion(interval, mazeGround);

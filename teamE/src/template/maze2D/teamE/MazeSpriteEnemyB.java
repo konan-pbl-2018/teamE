@@ -1,7 +1,6 @@
 package template.maze2D.teamE;
 
 import framework.game2D.Map2D;
-import framework.game2D.Position2D;
 import framework.game2D.Sprite;
 
 
@@ -13,7 +12,7 @@ import framework.game2D.Sprite;
  */
 public class MazeSpriteEnemyB extends Sprite {
 	private MazeSpriteEnemyB mazeSpriteEnemyB;
-
+	
 
 	public MazeSpriteEnemyB(String imageFile) {
 		super(imageFile);
@@ -21,9 +20,9 @@ public class MazeSpriteEnemyB extends Sprite {
 
 
 	public void motion(long interval, Map2D mazeGround) {
-		Position2D gridPointEB = mazeGround.getNeighborGridPoint(mazeSpriteEnemyB);
+
 		setVelocity(0.0,4.5);
-		setPosition(gridPointEB);
+	
 		if((int)(5*(Math.random()))==0){
 			setVelocity(0.0,0.0);
 		}
