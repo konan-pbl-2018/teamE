@@ -11,9 +11,12 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeStage mazeGround;
 	private MazeSpriteEnemy mazeSpriteEnemy;
 	private MazeSpriteEnemyB mazeSpriteEnemyB;
-	private EnemyC EnemyC;
+	private MazeSpriteItem mazeSpriteItem;
+	private MazeSpriteItem2 mazeSpriteItem2;
+
 	// ‘¬“x‚É‚æ‚Á‚Ä•¨‘Ì‚ª“®‚¢‚Ä‚¢‚é‚Éƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
 	private boolean disableControl = false;
+
 
 	private long lastTime;
 
@@ -38,8 +41,24 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
 
+
+		mazeSpriteItem= new MazeSpriteItem("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteItem.setPosition(16.0,12.0);
+		mazeSpriteItem.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem);
+
+		mazeSpriteItem2= new MazeSpriteItem2("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteItem2.setPosition(30.0,30.0);
+		mazeSpriteItem2.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem2);
+
 		setViewRange(65, 65);
+
+
+
 	}
+	int score=0;
+
 
 	@Override
 	public void progress(RWTVirtualController virtualController, long interval) {
@@ -83,18 +102,35 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.motion(interval, mazeGround);
 		mazeSpriteEnemy.motion(interval, mazeGround);
 		mazeSpriteEnemyB.motion(interval, mazeGround);
-		EnemyC.motion(interval, mazeGround);
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
-			System.out.println("“G‚ÆÚG");
+		//	System.out.println("“G‚ÆÚG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
 
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-		System.out.println("“G‚ÆÚG");
+	//	System.out.println("“G‚ÆÚG");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
+
+
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem)){//ƒAƒCƒeƒ€‚ÆÚG‚µ‚½
+			universe.displace(mazeSpriteItem);
+			score ++;
+			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
+			System.out.println(score);
+
+	}
+	if(mazeSpritePlayer.checkCollision(mazeSpriteItem2)){//ƒAƒCƒeƒ€‚ÆÚG‚µ‚½
+			universe.displace(mazeSpriteItem2);
+			score ++;
+			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
+			System.out.println(score);
+		}
+
+
+
 
 }
 
