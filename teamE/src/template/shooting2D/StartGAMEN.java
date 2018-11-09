@@ -1,9 +1,12 @@
 package template.shooting2D;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 
 import framework.RWT.RWTContainer;
+import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTLabel;
 import framework.RWT.RWTVirtualController;
 import framework.RWT.RWTVirtualKey;
@@ -12,12 +15,24 @@ import framework.RWT.RWTVirtualKey;
 
 public class StartGAMEN extends RWTContainer {
 	private TemplateShooting2DMultiStates game;
+	private RWTFrame3D frame;
 
-	public StartGAMEN(TemplateShooting2DMultiStates game) {
+	public StartGAMEN() {
 		this.game = game;
 	}
 
+	public RWTFrame3D createFrame3D() {
+		frame = new RWTFrame3D();
+		frame.setSize(1000, 800);
+		frame.setTitle("Test");
+		frame.setBackground(Color.BLACK);
+		return frame;
+	}
 
+	private Component getContentPane() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 
 	@Override
 	public void build(GraphicsConfiguration gc) {
