@@ -15,6 +15,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	// ‘¬“x‚É‚æ‚Á‚Ä•¨‘Ì‚ª“®‚¢‚Ä‚¢‚é‚Éƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
 	private boolean disableControl = false;
 
+
 	private long lastTime;
 
 	@Override
@@ -43,8 +44,9 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		EnemyD.setCollisionRadius(0.5);
 		universe.place(EnemyD);
 
-		setViewRange(65, 65);
-	}
+		setViewRange(65, 65);	}
+	int score=0;
+
 
 	@Override
 	public void progress(RWTVirtualController virtualController, long interval) {
@@ -91,21 +93,19 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		EnemyD.motion(interval, mazeGround);
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
-			System.out.println("“G‚ÆÚG");
+		//	System.out.println("“G‚ÆÚG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
 
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-		System.out.println("“G‚ÆÚG");
+	//	System.out.println("“G‚ÆÚG");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
-
 		if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
 			System.out.println("“G‚ÆÚG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
-
 }
 
 
