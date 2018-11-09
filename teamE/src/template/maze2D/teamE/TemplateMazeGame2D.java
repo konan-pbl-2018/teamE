@@ -11,7 +11,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeStage mazeGround;
 	private MazeSpriteEnemy mazeSpriteEnemy;
 	private MazeSpriteEnemyB mazeSpriteEnemyB;
-
+	private EnemyD EnemyD;
 	// ‘¬“x‚É‚æ‚Á‚Ä•¨‘Ì‚ª“®‚¢‚Ä‚¢‚é‚Éƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
 	private boolean disableControl = false;
 
@@ -37,7 +37,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemyB.setPosition(4.0,2.0);
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
-		
+
 		setViewRange(65, 65);
 	}
 
@@ -94,6 +94,11 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		System.out.println("“G‚ÆÚG");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
+
+		if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+			System.out.println("“G‚ÆÚG");
+			mazeSpritePlayer.setPosition(2.0, 2.0);
+		}
 
 }
 
