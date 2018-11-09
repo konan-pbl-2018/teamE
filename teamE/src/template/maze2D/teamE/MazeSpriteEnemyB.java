@@ -26,7 +26,6 @@ public class MazeSpriteEnemyB extends Sprite {
 		if(time>Changetime) {
 
 			if(rdm==0) {
-
 				VX=0.0;
 				VY=-4.5;
 			}
@@ -49,7 +48,7 @@ public class MazeSpriteEnemyB extends Sprite {
 			time=0;
 		}
 		setVelocity(VX,VY);
-		super.motion(interval, mazeGround);;
+		super.motion(interval, mazeGround);
 	}
 
 }

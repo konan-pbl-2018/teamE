@@ -38,11 +38,6 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
 
-		EnemyC= new EnemyC("data\\images\\E_images\\character\\pacman_teki.png");
-		EnemyC.setPosition(2.0,2.0);
-		EnemyC.setCollisionRadius(0.5);
-		universe.place(EnemyC);
-
 		setViewRange(65, 65);
 	}
 
