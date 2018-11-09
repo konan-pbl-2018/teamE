@@ -27,21 +27,21 @@ public class MazeSpriteEnemy extends Sprite {
 			if(rdm==0) {
 
 				VX=0.0;
-				VY=-6.5;
+				VY=-10;
 			}
 			else if(rdm==1) {
 
-				VX=6.5;
+				VX=10;
 				VY=0.0;
 			}
 			else if(rdm==2) {
 
 				VX=0.0;
-				VY=6.5;
+				VY=10;
 			}
 			else if(rdm==3) {
 
-				VX=-6.5;
+				VX=-10;
 				VY=0.0;
 			}
 

@@ -38,6 +38,11 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
 
+		EnemyD= new EnemyD("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyD.setPosition(4.0,2.0);
+		EnemyD.setCollisionRadius(0.5);
+		universe.place(EnemyD);
+
 		setViewRange(65, 65);
 	}
 
@@ -83,6 +88,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.motion(interval, mazeGround);
 		mazeSpriteEnemy.motion(interval, mazeGround);
 		mazeSpriteEnemyB.motion(interval, mazeGround);
+		EnemyD.motion(interval, mazeGround);
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
 			System.out.println("“G‚ÆÚG");
