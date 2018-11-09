@@ -14,6 +14,13 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private EnemyD EnemyD;
 	private EnemyC EnemyC;
 	private EnemyE EnemyE;
+	private MazeSpriteItem mazeSpriteItem;
+	private MazeSpriteItem2 mazeSpriteItem2;
+	private MazeSpriteItem3 mazeSpriteItem3;
+	private MazeSpriteItem4 mazeSpriteItem4;
+	private MazeSpriteItem5 mazeSpriteItem5;
+	private MazeSpriteItem6 mazeSpriteItem6;
+
 
 	//private Sound3D gameBGM = BGM3D.registerBGM("data\\Music\\BGM\\game1_8bit29.wav");
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
@@ -60,6 +67,38 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		EnemyE.setPosition(15.0,15.0);
 		EnemyE.setCollisionRadius(0.5);
 		universe.place(EnemyE);
+
+		mazeSpriteItem= new MazeSpriteItem("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteItem.setPosition(16.0,32.0);
+		mazeSpriteItem.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem);
+
+		mazeSpriteItem2= new MazeSpriteItem2("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteItem2.setPosition(32.0,28.0);
+		mazeSpriteItem2.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem2);
+
+		mazeSpriteItem3= new MazeSpriteItem3("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteItem3.setPosition(26.0,24.0);
+		mazeSpriteItem3.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem3);
+
+		mazeSpriteItem4= new MazeSpriteItem4("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteItem4.setPosition(20.0,22.0);
+		mazeSpriteItem4.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem4);
+
+		mazeSpriteItem5= new MazeSpriteItem5("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteItem5.setPosition(34.0,18.0);
+		mazeSpriteItem5.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem5);
+
+		mazeSpriteItem6= new MazeSpriteItem6("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteItem6.setPosition(6.0,12.0);
+		mazeSpriteItem6.setCollisionRadius(0.5);
+		universe.place(mazeSpriteItem6);
+
+
 
 		setViewRange(65, 65);	}
 	int score=0;
@@ -134,6 +173,43 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			System.out.println("敵と接触");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
+
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem)) {//itemと接触したとき
+			universe.displace(mazeSpriteItem);
+			score ++;
+	//	System.out.println("アイテム獲得");
+
+	}
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem2)) {//itemと接触したとき
+			universe.displace(mazeSpriteItem2);
+			score ++;
+	//	System.out.println("アイテム獲得");
+
+	}
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem3)) {//itemと接触したとき
+			universe.displace(mazeSpriteItem3);
+			score ++;
+	//	System.out.println("アイテム獲得");
+
+	}
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem4)) {//itemと接触したとき
+			universe.displace(mazeSpriteItem4);
+			score ++;
+	//	System.out.println("アイテム獲得");
+
+	}
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem5)) {//itemと接触したとき
+			universe.displace(mazeSpriteItem5);
+			score ++;
+	//	System.out.println("アイテム獲得");
+
+	}
+		if(mazeSpritePlayer.checkCollision(mazeSpriteItem6)) {//itemと接触したとき
+			universe.displace(mazeSpriteItem6);
+			score ++;
+	//	System.out.println("アイテム獲得");
+
+	}
 }
 
 
