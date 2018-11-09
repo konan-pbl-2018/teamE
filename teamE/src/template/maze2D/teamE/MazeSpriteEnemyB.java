@@ -28,21 +28,21 @@ if(time>Changetime) {
 		if(rdm==0) {
 
 			VX=0.0;
-			VY=-4.5;
+			VY=-18;
 		}
 		else if(rdm==1) {
 
-			VX=4.5;
+			VX=18;
 			VY=0.0;
 		}
 		else if(rdm==2) {
 
 		VX=0.0;
-		VY=4.5;
+		VY=18;
 		}
 		else if(rdm==3) {
 
-			VX=-4.5;
+			VX=-18;
 			VY=0.0;
 		}
 

@@ -37,7 +37,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemyB.setPosition(4.0,2.0);
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
-
+		
 		setViewRange(65, 65);
 	}
 
