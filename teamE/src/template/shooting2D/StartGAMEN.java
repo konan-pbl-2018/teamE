@@ -21,6 +21,7 @@ public class StartGAMEN extends RWTContainer {
 
 	public void init(Universe universe) {
 		Sprite wall = new Sprite("data\\images\\E_images\\block.png");
+		Sprite.setPosition(0.0, -10.0);
 		universe.place(wall);
 	}
 
