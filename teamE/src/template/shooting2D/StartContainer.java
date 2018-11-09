@@ -1,6 +1,5 @@
 package template.shooting2D;
 
-import java.awt.Event;
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 
@@ -21,7 +20,7 @@ public class StartContainer extends RWTContainer {
 		RWTLabel startLabel = new RWTLabel();
 		startLabel.setString("Start");
 		startLabel.setRelativePosition(0.3f, 0.5f);
-		Font f = new Font("", Font.PLAIN, 60);
+		Font f = new Font("", Font.PLAIN, 80);
 		startLabel.setFont(f);
 		addWidget(startLabel);
 	}
