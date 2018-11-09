@@ -12,6 +12,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpriteEnemy mazeSpriteEnemy;
 	private MazeSpriteEnemyB mazeSpriteEnemyB;
 	private EnemyD EnemyD;
+	private EnemyC EnemyC;
+	private EnemyE EnemyE;
 	// ‘¬“x‚É‚æ‚Á‚Ä•¨‘Ì‚ª“®‚¢‚Ä‚¢‚é‚Éƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
 	private boolean disableControl = false;
 
@@ -40,9 +42,21 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeSpriteEnemyB);
 
 		EnemyD= new EnemyD("data\\images\\E_images\\character\\pacman_teki.png");
-		EnemyD.setPosition(4.0,2.0);
+		EnemyD.setPosition(20.0,2.0);
 		EnemyD.setCollisionRadius(0.5);
 		universe.place(EnemyD);
+
+
+		EnemyC= new EnemyC("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyC.setPosition(4.0,15.0);
+		EnemyC.setCollisionRadius(0.5);
+		universe.place(EnemyC);
+
+
+		EnemyE= new EnemyE("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyE.setPosition(15.0,15.0);
+		EnemyE.setCollisionRadius(0.5);
+		universe.place(EnemyE);
 
 		setViewRange(65, 65);	}
 	int score=0;
@@ -91,7 +105,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemy.motion(interval, mazeGround);
 		mazeSpriteEnemyB.motion(interval, mazeGround);
 		EnemyD.motion(interval, mazeGround);
-
+		EnemyC.motion(interval, mazeGround);
+		EnemyE.motion(interval, mazeGround);
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
 		//	System.out.println("“G‚ÆÚG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
@@ -103,6 +118,16 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
 		if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+			System.out.println("“G‚ÆÚG");
+			mazeSpritePlayer.setPosition(2.0, 2.0);
+		}
+
+		if(mazeSpritePlayer.checkCollision(EnemyC)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+			System.out.println("“G‚ÆÚG");
+			mazeSpritePlayer.setPosition(2.0, 2.0);
+		}
+
+		if(mazeSpritePlayer.checkCollision(EnemyE)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
 			System.out.println("“G‚ÆÚG");
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
