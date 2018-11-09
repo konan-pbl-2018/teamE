@@ -38,8 +38,8 @@ public class MazeSpriteEnemyB extends Sprite {
 				setVelocity(-4.5,0);
 			}
 		}
-
 	}
+
 	//public class timer{
 	public void motion(long interval, Map2D mazeGround) {
 
@@ -47,15 +47,31 @@ public class MazeSpriteEnemyB extends Sprite {
 
 		//Timer timer = new Timer();
 		//timer.schedule(new MazeSpriteEnemyB(), 1000,3000);
-		
-		//setVelocity(0.0,4.5);
-		super.motion(interval, mazeGround);;
-		Timer timer = new Timer();
-		timer.schedule(new Rando(), 10000, 30000);
 
+		//setVelocity(0.0,4.5);
+		if((int)(5*(Math.random()))==0){
+			setVelocity(0.0,0.0);
+		}
+		else if((int)(5*(Math.random()))==1) {
+			setVelocity(0,-4.5);
+		}
+		else if((int)(5*(Math.random()))==2) {
+			setVelocity(4.5,0);
+		}
+		else if((int)(5*(Math.random()))==3) {
+			setVelocity(0.0,4.5);
+		}
+
+		else if((int)(5*(Math.random()))==4) {
+			setVelocity(-4.5,0);
+		}
+		Timer timer = new Timer();
+		timer.schedule(new Rando(), 0, 3000);
+		super.motion(interval, mazeGround);;
 
 
 	}
+
 }
 
 //}
