@@ -1,5 +1,6 @@
-package template.shooting2D;
+package contents_test;
 
+import java.awt.Event;
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 
@@ -8,47 +9,27 @@ import framework.RWT.RWTLabel;
 import framework.RWT.RWTVirtualController;
 import framework.RWT.RWTVirtualKey;
 
-
-
-public class StartGAMEN extends RWTContainer {
+public class EndingContainer extends RWTContainer {
 	private TemplateShooting2DMultiStates game;
 
-	public StartGAMEN(TemplateShooting2DMultiStates game) {
+	public EndingContainer(TemplateShooting2DMultiStates game) {
 		this.game = game;
 	}
 
-
-
 	@Override
 	public void build(GraphicsConfiguration gc) {
-
-		Font f = new Font("", Font.PLAIN, 60);
-
-		RWTLabel Title = new RWTLabel();
-		Title.setString("Ç»ÇÒÇ⁄Å[!");
-		Title.setRelativePosition(0.3f, 0.5f);
-		Title.setFont(f);
-		addWidget(Title);
-
 		RWTLabel startLabel = new RWTLabel();
-		startLabel.setString("start!");
-		startLabel.setRelativePosition(0.5f, 0.9f);
+		startLabel.setString("Finish");
+		startLabel.setRelativePosition(0.3f, 0.5f);
+		Font f = new Font("", Font.PLAIN, 60);
 		startLabel.setFont(f);
 		addWidget(startLabel);
-
-		RWTLabel design = new RWTLabel();
-		design.setString("ÅôÅôÅôÅôÅôÅôÅôÅô");
-		design.setRelativePosition(0.0f, 0.1f);
-		design.setFont(f);
-		addWidget(design);
-
-
 	}
 
 	@Override
 	public void keyPressed(RWTVirtualKey key) {
 		if (key.getVirtualKey() == RWTVirtualController.BUTTON_A) {
-			game.play();
+			game.restart();
 		}
 	}
 

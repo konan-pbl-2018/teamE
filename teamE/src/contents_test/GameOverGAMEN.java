@@ -1,4 +1,4 @@
-package template.shooting2D;
+package contents_test;
 
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
@@ -10,10 +10,10 @@ import framework.RWT.RWTVirtualKey;
 
 
 
-public class StartGAMEN extends RWTContainer {
+public class GameOverGAMEN extends RWTContainer {
 	private TemplateShooting2DMultiStates game;
 
-	public StartGAMEN(TemplateShooting2DMultiStates game) {
+	public GameOverGAMEN(TemplateShooting2DMultiStates game) {
 		this.game = game;
 	}
 

@@ -1,4 +1,4 @@
-package template.shooting2D;
+package contents_test;
 
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
