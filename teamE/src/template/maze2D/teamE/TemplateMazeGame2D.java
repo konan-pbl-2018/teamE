@@ -53,7 +53,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			mazeSpritePlayer.setVelocity(0.0, 0.0);
 			disableControl = false;
 		}
-
+	
 		// キャラが移動していなければ、キー操作の処理を行える。
 		if(!disableControl){
 			// キー操作の処理
@@ -94,6 +94,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		System.out.println("敵と接触");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
+		
 }
 
 
