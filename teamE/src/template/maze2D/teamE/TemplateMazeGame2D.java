@@ -14,6 +14,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private EnemyD EnemyD;
 	private EnemyC EnemyC;
 	private EnemyE EnemyE;
+
+	//private Sound3D gameBGM = BGM3D.registerBGM("data\\Music\\BGM\\game1_8bit29.wav");
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
 
@@ -22,6 +24,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	@Override
 	public void init(Universe universe) {
+		//BGM3D.playBGM(gameBGM);
 		mazeGround = new MazeStage("data\\images\\E_images\\block.png", "data\\images\\E_images\\midori.png");
 		universe.place(mazeGround);
 		camera.addTarget(mazeGround);
