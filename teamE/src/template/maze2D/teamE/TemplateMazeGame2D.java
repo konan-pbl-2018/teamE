@@ -11,7 +11,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeStage mazeGround;
 	private MazeSpriteEnemy mazeSpriteEnemy;
 	private MazeSpriteEnemyB mazeSpriteEnemyB;
-
+	private EnemyC EnemyC;
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
 
@@ -37,6 +37,11 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemyB.setPosition(4.0,2.0);
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
+
+		EnemyC= new EnemyC("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyC.setPosition(2.0,2.0);
+		EnemyC.setCollisionRadius(0.5);
+		universe.place(EnemyC);
 
 		setViewRange(65, 65);
 	}
@@ -83,6 +88,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpritePlayer.motion(interval, mazeGround);
 		mazeSpriteEnemy.motion(interval, mazeGround);
 		mazeSpriteEnemyB.motion(interval, mazeGround);
+		EnemyC.motion(interval, mazeGround);
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//敵（なんぼーくん）と接触した時
 			System.out.println("敵と接触");
