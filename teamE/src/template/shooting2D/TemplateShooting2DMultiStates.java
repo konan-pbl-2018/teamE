@@ -31,17 +31,17 @@ public class TemplateShooting2DMultiStates extends SimpleShootingGame {
 	// あとで設計変更
 	// Enemyクラスでこの値を使いたいため。
 	public static final int RANGE = 30;
-	
+
 	private IGameState initialGameState = null;
 	private IGameState finalGameState = null;
-	
+
 	public TemplateShooting2DMultiStates() {
 		super();
 		initialGameState = new IGameState() {
 			@Override
 			public void init(RWTFrame3D frame) {
 				TemplateShooting2DMultiStates.this.frame = frame;
-				RWTContainer container = new StartContainer(TemplateShooting2DMultiStates.this);
+				RWTContainer container = new StartGAMEN(TemplateShooting2DMultiStates.this);
 				changeContainer(container);
 			}
 			@Override
@@ -69,19 +69,19 @@ public class TemplateShooting2DMultiStates extends SimpleShootingGame {
 		};
 		setCurrentGameState(initialGameState);
 	}
-		
+
 	public void restart() {
 		stop();
 		setCurrentGameState(initialGameState);
 		start();
 	}
-	
+
 	public void play() {
 		stop();
 		setCurrentGameState(this);
 		start();
 	}
-	
+
 	public void ending() {
 		stop();
 		setCurrentGameState(finalGameState);
@@ -283,7 +283,7 @@ public class TemplateShooting2DMultiStates extends SimpleShootingGame {
 
 	/**
 	 * 弾幕が入ったリスト（myShipBulletFromMyShip）をプレイヤーの弾のリストに設定する
-	 * 
+	 *
 	 * @param myShipBulletFromMyShip
 	 */
 	public void setMyShipBullet(ArrayList<MyShipBullet> myShipBulletFromMyShip) {
@@ -295,7 +295,7 @@ public class TemplateShooting2DMultiStates extends SimpleShootingGame {
 
 	/**
 	 * 弾幕が入ったリスト（enemyBulletListFromEnemy）を敵の弾のリストに設定する
-	 * 
+	 *
 	 * @param enemyBulletListFromEnemy
 	 */
 	public void setEnemyBullet(ArrayList<EnemyBullet> enemyBulletListFromEnemy) {
@@ -307,7 +307,7 @@ public class TemplateShooting2DMultiStates extends SimpleShootingGame {
 
 	/**
 	 * ゲームのメイン
-	 * 
+	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
