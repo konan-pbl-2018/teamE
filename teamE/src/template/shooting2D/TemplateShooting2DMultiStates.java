@@ -41,7 +41,7 @@ public class TemplateShooting2DMultiStates extends SimpleShootingGame {
 			@Override
 			public void init(RWTFrame3D frame) {
 				TemplateShooting2DMultiStates.this.frame = frame;
-				RWTContainer container = new StartGAMEN(TemplateShooting2DMultiStates.this);
+				RWTContainer container = new StartGAMEN();
 				changeContainer(container);
 			}
 			@Override
