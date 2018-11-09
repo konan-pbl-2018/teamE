@@ -29,7 +29,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeSpritePlayer);
 
 		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\nambo.gif");
-		mazeSpriteEnemy.setPosition(6.0,6.0);
+		mazeSpriteEnemy.setPosition(8.0,14.0);
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
 
@@ -53,7 +53,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			mazeSpritePlayer.setVelocity(0.0, 0.0);
 			disableControl = false;
 		}
-	
+
 		// キャラが移動していなければ、キー操作の処理を行える。
 		if(!disableControl){
 			// キー操作の処理
@@ -94,7 +94,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		System.out.println("敵と接触");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
 	}
-		
+
 }
 
 

@@ -12,7 +12,7 @@ import framework.game2D.Sprite;
 public class MazeSpriteEnemyB extends Sprite {
 	private MazeSpriteEnemyB mazeSpriteEnemyB;
 	int time;
-	int Changetime=400;
+	int Changetime=300;
 	double VY,VX;
 	public MazeSpriteEnemyB(String imageFile) {
 		super(imageFile);
@@ -20,38 +20,35 @@ public class MazeSpriteEnemyB extends Sprite {
 
 
 	public void motion(long interval, Map2D mazeGround) {
-time+=interval;
-int rdm=(int) (4*(Math.random()));
+		time+=interval;
+		int rdm=(int) (4*(Math.random()));
 
-if(time>Changetime) {
+		if(time>Changetime) {
 
-		if(rdm==0) {
+			if(rdm==0) {
+				VX=0.0;
+				VY=-4.5;
+			}
+			else if(rdm==1) {
 
-			VX=0.0;
-			VY=-18;
+				VX=4.5;
+				VY=0.0;
+			}
+			else if(rdm==2) {
+
+				VX=0.0;
+				VY=4.5;
+			}
+			else if(rdm==3) {
+
+				VX=-4.5;
+				VY=0.0;
+			}
+
+			time=0;
 		}
-		else if(rdm==1) {
-
-			VX=18;
-			VY=0.0;
-		}
-		else if(rdm==2) {
-
-		VX=0.0;
-		VY=18;
-		}
-		else if(rdm==3) {
-
-			VX=-18;
-			VY=0.0;
-		}
-
-		time=0;
-}
-setVelocity(VX,VY);
-//Timer timer = new Timer();
-//timer.schedule(new Rando(), 0, 3000);
-super.motion(interval, mazeGround);;
+		setVelocity(VX,VY);
+		super.motion(interval, mazeGround);
 	}
 
 }
