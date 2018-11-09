@@ -20,7 +20,7 @@ public class StartContainer extends RWTContainer {
 		RWTLabel startLabel = new RWTLabel();
 		startLabel.setString("Game Over!");
 		startLabel.setRelativePosition(0.3f, 0.5f);
-		Font f = new Font("", Font.PLAIN, 60);
+		Font f = new Font("", Font.PLAIN, 80);
 		startLabel.setFont(f);
 		addWidget(startLabel);
 	}
