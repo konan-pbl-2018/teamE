@@ -22,7 +22,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpriteItem4 mazeSpriteItem4;
 	private MazeSpriteItem5 mazeSpriteItem5;
 	private MazeSpriteItem6 mazeSpriteItem6;
-	private ChItem ChItem;
+
 
 
 	private Sound3D gameBGM = BGM3D.registerBGM("data\\Music\\BGM\\BGM1.wav");
