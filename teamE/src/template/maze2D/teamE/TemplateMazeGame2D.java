@@ -31,7 +31,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private boolean disableControl = false;
 
 	int score=0;
-	int scorecheck=0;
+	int hp=3;
 	private long lastTime;
 
 	@Override
@@ -163,20 +163,28 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
 	//	System.out.println("“G‚ÆÚG");
 		mazeSpritePlayer.setPosition(2.0, 2.0);
+		hp--;
+		System.out.println(hp);
 	}
 		if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG");
+			System.out.println("“G‚ÆÚG ");
+			hp--;
+			System.out.println(hp);
 			mazeSpritePlayer.setPosition(2.0, 2.0);
 		}
 
 		if(mazeSpritePlayer.checkCollision(EnemyC)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
 			System.out.println("“G‚ÆÚG");
+			hp--;
 			mazeSpritePlayer.setPosition(2.0, 2.0);
+			System.out.println(hp);
 		}
 
 		if(mazeSpritePlayer.checkCollision(EnemyE)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
 			System.out.println("“G‚ÆÚG");
+			hp--;
 			mazeSpritePlayer.setPosition(2.0, 2.0);
+			System.out.println(hp);
 		}
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem)) {//item‚ÆÚG‚µ‚½‚Æ‚«
