@@ -178,7 +178,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		}
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem)) {//itemと接触したとき
-			universe.displace(mazeSpriteItem);
+			mazeSpriteItem.setPosition(22.0,22.0);
 			score ++;
 			System.out.println("ポイント獲得");
 			System.out.println(score);
@@ -219,6 +219,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem6)) {//itemと接触したとき
 			universe.displace(mazeSpriteItem6);
+			mazeSpriteItem.setPosition(22.0,22.0);
 			score ++;
 			System.out.println("ポイント獲得");
 			System.out.println(score);
