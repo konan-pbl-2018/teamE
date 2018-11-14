@@ -22,13 +22,15 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpriteItem4 mazeSpriteItem4;
 	private MazeSpriteItem5 mazeSpriteItem5;
 	private MazeSpriteItem6 mazeSpriteItem6;
+	private ChItem ChItem;
 
 
 	private Sound3D gameBGM = BGM3D.registerBGM("data\\Music\\BGM\\BGM1.wav");
 	// 速度によって物体が動いている時にボタンを押せるかどうかを判定するフラグ
 	private boolean disableControl = false;
 
-
+	int score=0;
+	int scorecheck=0;
 	private long lastTime;
 
 	@Override
@@ -101,9 +103,9 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeSpriteItem6);
 
 
+		setViewRange(65, 65);
+		}
 
-		setViewRange(65, 65);	}
-	int score=0;
 
 
 	@Override
@@ -217,14 +219,15 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem6)) {//itemと接触したとき
-			universe.displace(mazeSpriteItem6);
-			mazeSpriteItem.setPosition(22.0,22.0);
+			mazeSpriteItem6.setPosition(22.0,22.0);
 			score ++;
 			System.out.println("ポイント獲得");
 			System.out.println(score);
 	//	System.out.println("アイテム獲得");
 
 	}
+
+
 }
 
 
