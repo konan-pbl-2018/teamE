@@ -310,7 +310,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			cleargamen = new Sprite("data\\images\\E_images\\screen\\CREARgamen2.png", 30.0f);
 			cleargamen.setPosition(24.0,24.0);
 			universe.place(cleargamen);
-
+			score++;
 }
 
 
