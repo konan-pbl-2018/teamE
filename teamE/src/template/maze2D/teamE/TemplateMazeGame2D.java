@@ -32,6 +32,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	int score=0;
 	int hp=3;
+	int debg=0;
 	private long lastTime;
 
 	@Override
@@ -154,37 +155,40 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		EnemyD.motion(interval, mazeGround);
 		EnemyC.motion(interval, mazeGround);
 		EnemyE.motion(interval, mazeGround);
-		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
-		//	System.out.println("“G‚ÆÚG");
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-		}
+
+		if(debg==0) {
+			if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
+				//	System.out.println("“G‚ÆÚG");
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+			}
 
 
-		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-	//	System.out.println("“G‚ÆÚG");
-		mazeSpritePlayer.setPosition(2.0, 2.0);
-		hp--;
-		System.out.println(hp);
-	}
-		if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG ");
-			hp--;
-			System.out.println(hp);
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-		}
+			if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				//	System.out.println("“G‚ÆÚG");
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				hp--;
+				System.out.println(hp);
+			}
+			if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				System.out.println("“G‚ÆÚG ");
+				hp--;
+				System.out.println(hp);
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+			}
 
-		if(mazeSpritePlayer.checkCollision(EnemyC)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG");
-			hp--;
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-			System.out.println(hp);
-		}
+			if(mazeSpritePlayer.checkCollision(EnemyC)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				System.out.println("“G‚ÆÚG");
+				hp--;
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				System.out.println(hp);
+			}
 
-		if(mazeSpritePlayer.checkCollision(EnemyE)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG");
-			hp--;
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-			System.out.println(hp);
+			if(mazeSpritePlayer.checkCollision(EnemyE)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				System.out.println("“G‚ÆÚG");
+				hp--;
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				System.out.println(hp);
+			}
 		}
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem)) {//item‚ÆÚG‚µ‚½‚Æ‚«
@@ -196,7 +200,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem2)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem2);
+			//universe.displace(mazeSpriteItem2);
+			mazeSpriteItem2.setPosition(28.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -204,7 +209,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem3)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem3);
+			//universe.displace(mazeSpriteItem3);
+			mazeSpriteItem3.setPosition(26.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -212,7 +218,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem4)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem4);
+			//universe.displace(mazeSpriteItem4);
+			mazeSpriteItem4.setPosition(24.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -220,7 +227,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem5)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem5);
+			//universe.displace(mazeSpriteItem5);
+			mazeSpriteItem5.setPosition(20.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -228,7 +236,7 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem6)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			mazeSpriteItem6.setPosition(22.0,22.0);
+			mazeSpriteItem6.setPosition(18.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
