@@ -1,6 +1,5 @@
 package template.shooting2D;
 
-import java.awt.Event;
 import java.awt.Font;
 import java.awt.GraphicsConfiguration;
 
@@ -8,11 +7,12 @@ import framework.RWT.RWTContainer;
 import framework.RWT.RWTLabel;
 import framework.RWT.RWTVirtualController;
 import framework.RWT.RWTVirtualKey;
+import template.maze2D.teamE.TemplateMazeGame2D;
 
 public class EndingContainer extends RWTContainer {
-	private TemplateShooting2DMultiStates game;
+	private TemplateMazeGame2D game;
 
-	public EndingContainer(TemplateShooting2DMultiStates game) {
+	public EndingContainer(TemplateMazeGame2D game) {
 		this.game = game;
 	}
 

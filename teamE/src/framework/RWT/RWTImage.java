@@ -1,14 +1,11 @@
 package framework.RWT;
 import java.awt.Component;
 import java.awt.Graphics;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import javax.vecmath.Point2f;
 
 /**
  * 画像です。
@@ -23,14 +20,14 @@ public class RWTImage extends RWTWidget {
 	protected int x = 0;
 	protected int y = 0;
 	protected int width = 0;
-	protected int height = 0;	
+	protected int height = 0;
 
 	private BufferedImage image = null;
 	private ImageObserver observer;
-	
+
 	private int imageWidth = 0;
 	private int imageHeight = 0;
-	
+
 	public RWTImage(String fileName) {
 		try {
 			image = ImageIO.read(new File(fileName));
@@ -40,7 +37,7 @@ public class RWTImage extends RWTWidget {
 			image = null;
 		}
 	}
-	
+
 	/**
 	 * 画像の相対位置を指定する。
 	 * @param x x座標値(0.0f～1.0f)
@@ -50,7 +47,7 @@ public class RWTImage extends RWTWidget {
 		relativeX = x;
 		relativeY = y;
 	}
-	
+
 	/**
 	 * 画像を設定します。
 	 * @param fileName
@@ -64,7 +61,7 @@ public class RWTImage extends RWTWidget {
 			image = null;
 		}
 	}
-	
+
 	/**
 	 * 画像のサイズを設定します。
 	 * 相対値ではありません。
@@ -75,19 +72,19 @@ public class RWTImage extends RWTWidget {
 		imageWidth = x;
 		imageHeight = y;
 	}
-	
+
 	public void setObserver(ImageObserver o) {
 		observer = o;
 	}
-	
+
 	@Override
 	public void adjust(Component parent) {
 		int sx = parent.getWidth();
 		int sy = parent.getHeight();
 		x = (int) (sx * relativeX);
 		y = (int) (sy * relativeY);
-	}	
-	
+	}
+
 	@Override
 	public void paint(Graphics g) {
 		g.drawImage(image, x, y, imageWidth, imageHeight, observer);

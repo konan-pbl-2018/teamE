@@ -1,13 +1,17 @@
 
 package template.maze2D.teamE;
 
+import framework.RWT.RWTContainer;
 import framework.RWT.RWTFrame3D;
 import framework.RWT.RWTVirtualController;
 import framework.audio.BGM3D;
 import framework.audio.Sound3D;
 import framework.game2D.Position2D;
+import framework.gameMain.IGameState;
 import framework.gameMain.SimpleMazeGame;
 import framework.model3D.Universe;
+import template.shooting2D.EndingContainer;
+import template.shooting2D.StartGAMEN;
 
 public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpritePlayer mazeSpritePlayer;
@@ -34,7 +38,60 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	int hp=10;
 	int debg=0;
 	private long lastTime;
+	private IGameState initialGameState = null;
+	private IGameState finalGameState = null;
 
+	public TemplateMazeGame2D() {
+		super();
+		initialGameState = new IGameState() {
+			@Override
+			public void init(RWTFrame3D frame) {
+				TemplateMazeGame2D.this.frame = frame;
+				RWTContainer container = new StartGAMEN(TemplateMazeGame2D.this);
+				changeContainer(container);
+			}
+			@Override
+			public boolean useTimer() {
+				return false;
+			}
+			@Override
+			public void update(RWTVirtualController virtualController, long interval) {
+			}
+		};
+		finalGameState = new IGameState() {
+			@Override
+			public void init(RWTFrame3D frame) {
+				TemplateMazeGame2D.this.frame = frame;
+				RWTContainer container = new EndingContainer(TemplateMazeGame2D.this);
+				changeContainer(container);
+			}
+			@Override
+			public boolean useTimer() {
+				return false;
+			}
+			@Override
+			public void update(RWTVirtualController virtualController, long interval) {
+			}
+		};
+		setCurrentGameState(initialGameState);
+	}
+	public void restart() {
+		stop();
+		setCurrentGameState(initialGameState);
+		start();
+	}
+
+	public void play() {
+		stop();
+		setCurrentGameState(this);
+		start();
+	}
+
+	public void ending() {
+		stop();
+		setCurrentGameState(finalGameState);
+		start();
+	}
 	@Override
 	public void init(Universe universe) {
 		BGM3D.playBGM(gameBGM);
