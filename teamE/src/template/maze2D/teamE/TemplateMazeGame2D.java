@@ -25,11 +25,14 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpriteItem6 mazeSpriteItem6;
 
 
+
 	private Sound3D gameBGM = BGM3D.registerBGM("data\\Music\\BGM\\BGM1.wav");
 	// ‘¬“x‚É‚æ‚Á‚Ä•¨‘Ì‚ª“®‚¢‚Ä‚¢‚é‚Éƒ{ƒ^ƒ“‚ğ‰Ÿ‚¹‚é‚©‚Ç‚¤‚©‚ğ”»’è‚·‚éƒtƒ‰ƒO
 	private boolean disableControl = false;
 
-
+	int score=0;
+	int hp=10;
+	int debg=0;
 	private long lastTime;
 
 	@Override
@@ -40,34 +43,34 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		camera.addTarget(mazeGround);
 
 		mazeSpritePlayer = new MazeSpritePlayer("data\\images\\E_images\\character\\pacman_yellow.gif");
-		mazeSpritePlayer.setPosition(6.0, 2.0);
+		mazeSpritePlayer.setPosition(2.0, 2.0);
 		mazeSpritePlayer.setCollisionRadius(0.5);
 		universe.place(mazeSpritePlayer);
 
 		mazeSpriteEnemy= new MazeSpriteEnemy("data\\images\\E_images\\character\\nambo.gif");
-		mazeSpriteEnemy.setPosition(8.0,14.0);
+		mazeSpriteEnemy.setPosition(32.0,32.0);
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
 
-		mazeSpriteEnemyB= new MazeSpriteEnemyB("data\\images\\E_images\\character\\pacman_teki.png");
-		mazeSpriteEnemyB.setPosition(4.0,2.0);
+		mazeSpriteEnemyB= new MazeSpriteEnemyB("data\\images\\E_images\\character\\nambo.gif");
+		mazeSpriteEnemyB.setPosition(26.0,46.0);
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
 
-		EnemyD= new EnemyD("data\\images\\E_images\\character\\pacman_teki.png");
-		EnemyD.setPosition(20.0,2.0);
+		EnemyD= new EnemyD("data\\images\\E_images\\character\\nambo.gif");
+		EnemyD.setPosition(8.0,16.0);
 		EnemyD.setCollisionRadius(0.5);
 		universe.place(EnemyD);
 
 
-		EnemyC= new EnemyC("data\\images\\E_images\\character\\pacman_teki.png");
-		EnemyC.setPosition(4.0,15.0);
+		EnemyC= new EnemyC("data\\images\\E_images\\character\\nambo.gif");
+		EnemyC.setPosition(34.0,15.0);
 		EnemyC.setCollisionRadius(0.5);
 		universe.place(EnemyC);
 
 
-		EnemyE= new EnemyE("data\\images\\E_images\\character\\pacman_teki.png");
-		EnemyE.setPosition(15.0,15.0);
+		EnemyE= new EnemyE("data\\images\\E_images\\character\\nambo.gif");
+		EnemyE.setPosition(4.0,34.0);
 		EnemyE.setCollisionRadius(0.5);
 		universe.place(EnemyE);
 
@@ -102,9 +105,9 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		universe.place(mazeSpriteItem6);
 
 
+		setViewRange(65, 65);
+		}
 
-		setViewRange(65, 65);	}
-	int score=0;
 
 
 	@Override
@@ -152,29 +155,44 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		EnemyD.motion(interval, mazeGround);
 		EnemyC.motion(interval, mazeGround);
 		EnemyE.motion(interval, mazeGround);
-		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
-		//	System.out.println("“G‚ÆÚG");
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-		}
+
+		if(debg==0) {
+			if(mazeSpritePlayer.checkCollision(mazeSpriteEnemy)) {//“Gi‚È‚ñ‚Ú[‚­‚ñj‚ÆÚG‚µ‚½
+				//	System.out.println("“G‚ÆÚG");
+				mazeSpriteEnemy.setPosition(32.0,32.0);
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				hp--;
+				System.out.println(hp);
+			}
 
 
-		if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-	//	System.out.println("“G‚ÆÚG");
-		mazeSpritePlayer.setPosition(2.0, 2.0);
-	}
-		if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG");
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-		}
+			if(mazeSpritePlayer.checkCollision(mazeSpriteEnemyB)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				//	System.out.println("“G‚ÆÚG");
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				hp--;
+				System.out.println(hp);
+			}
+			if(mazeSpritePlayer.checkCollision(EnemyD)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				System.out.println("“G‚ÆÚG ");
+				EnemyD.setPosition(8.0,16.0);
+				hp--;
+				System.out.println(hp);
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+			}
 
-		if(mazeSpritePlayer.checkCollision(EnemyC)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG");
-			mazeSpritePlayer.setPosition(2.0, 2.0);
-		}
+			if(mazeSpritePlayer.checkCollision(EnemyC)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				System.out.println("“G‚ÆÚG");
+				hp--;
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				System.out.println(hp);
+			}
 
-		if(mazeSpritePlayer.checkCollision(EnemyE)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
-			System.out.println("“G‚ÆÚG");
-			mazeSpritePlayer.setPosition(2.0, 2.0);
+			if(mazeSpritePlayer.checkCollision(EnemyE)) {//“GB‚ÆÚG‚µ‚½‚Æ‚«
+				System.out.println("“G‚ÆÚG");
+				hp--;
+				mazeSpritePlayer.setPosition(2.0, 2.0);
+				System.out.println(hp);
+			}
 		}
 
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem)) {//item‚ÆÚG‚µ‚½‚Æ‚«
@@ -186,7 +204,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem2)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem2);
+			//universe.displace(mazeSpriteItem2);
+			mazeSpriteItem2.setPosition(28.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -194,7 +213,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem3)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem3);
+			//universe.displace(mazeSpriteItem3);
+			mazeSpriteItem3.setPosition(26.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -202,7 +222,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem4)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem4);
+			//universe.displace(mazeSpriteItem4);
+			mazeSpriteItem4.setPosition(24.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -210,7 +231,8 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem5)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem5);
+			//universe.displace(mazeSpriteItem5);
+			mazeSpriteItem5.setPosition(20.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
@@ -218,14 +240,15 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 
 	}
 		if(mazeSpritePlayer.checkCollision(mazeSpriteItem6)) {//item‚ÆÚG‚µ‚½‚Æ‚«
-			universe.displace(mazeSpriteItem6);
-			mazeSpriteItem.setPosition(22.0,22.0);
+			mazeSpriteItem6.setPosition(18.0,22.0);
 			score ++;
 			System.out.println("ƒ|ƒCƒ“ƒgŠl“¾");
 			System.out.println(score);
 	//	System.out.println("ƒAƒCƒeƒ€Šl“¾");
 
 	}
+
+
 }
 
 
