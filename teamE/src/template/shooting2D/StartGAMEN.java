@@ -7,17 +7,18 @@ import java.awt.GraphicsConfiguration;
 
 import framework.RWT.RWTContainer;
 import framework.RWT.RWTFrame3D;
-import framework.RWT.RWTLabel;
+import framework.RWT.RWTImage;
 import framework.RWT.RWTVirtualController;
 import framework.RWT.RWTVirtualKey;
+import template.maze2D.teamE.TemplateMazeGame2D;
 
 
 
 public class StartGAMEN extends RWTContainer {
-	private TemplateShooting2DMultiStates game;
+	private TemplateMazeGame2D game;
 	private RWTFrame3D frame;
 
-	public StartGAMEN() {
+	public StartGAMEN(TemplateMazeGame2D game) {
 		this.game = game;
 	}
 
@@ -39,25 +40,22 @@ public class StartGAMEN extends RWTContainer {
 
 		Font f = new Font("", Font.PLAIN, 60);
 
-		RWTLabel Title = new RWTLabel();
-		Title.setString("‚È‚ñ‚Ú[!");
-		Title.setRelativePosition(0.3f, 0.5f);
-		Title.setFont(f);
+		RWTImage Title = new RWTImage("data\\images\\E_images\\screen\\Start.jpg");
 		addWidget(Title);
 
-		RWTLabel startLabel = new RWTLabel();
-		startLabel.setString("start!");
-		startLabel.setRelativePosition(0.5f, 0.9f);
-		startLabel.setFont(f);
-		addWidget(startLabel);
+		//RWTImage startLabel = new RWTImage();
+//		startLabel.setString("start!");
+//		startLabel.setRelativePosition(0.5f, 0.9f);
+//		startLabel.setFont(f);
+//		addWidget(startLabel);
 
-		RWTLabel design = new RWTLabel();
-		design.setString("™™™™™™™™");
-		design.setRelativePosition(0.0f, 0.1f);
-		design.setFont(f);
-		addWidget(design);
+		//RWTImage design = new RWTImage();
+//		design.setString("™™™™™™™™");
+//		design.setRelativePosition(0.0f, 0.1f);
+//		design.setFont(f);
+//		addWidget(design);
 
-
+		repaint();
 	}
 
 	@Override
