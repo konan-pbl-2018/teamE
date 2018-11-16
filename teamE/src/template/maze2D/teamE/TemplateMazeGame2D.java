@@ -29,6 +29,13 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private MazeSpriteItem5 mazeSpriteItem5;
 	private MazeSpriteItem6 mazeSpriteItem6;
 
+	private Pacman1 pacman1;
+	private Pacman2 pacman2;
+	private Pacman3 pacman3;
+	private Pacman4 pacman4;
+	private Pacman5 pacman5;
+	private Pacman6 pacman6;
+
 
 
 	private Sound3D gameBGM = BGM3D.registerBGM("data\\Music\\BGM\\BGM1.wav");
@@ -162,6 +169,38 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteItem6.setPosition(6.0,12.0);
 		mazeSpriteItem6.setCollisionRadius(0.5);
 		universe.place(mazeSpriteItem6);
+
+
+
+		pacman1 = new Pacman1("data\\images\\E_images\\character\\pacman_yellow.gif");
+		pacman1.setPosition(18.0,20.0);
+		pacman1.setCollisionRadius(0.5);
+		universe.place(pacman1);
+
+		pacman2 = new Pacman2("data\\images\\E_images\\character\\pacman_yellow.gif");
+		pacman2.setPosition(20.0,20.0);
+		pacman2.setCollisionRadius(0.5);
+		universe.place(pacman2);
+
+		pacman3 = new Pacman3("data\\images\\E_images\\character\\pacman_yellow.gif");
+		pacman3.setPosition(22.0,20.0);
+		pacman3.setCollisionRadius(0.5);
+		universe.place(pacman3);
+
+		pacman4 = new Pacman4("data\\images\\E_images\\character\\pacman_yellow.gif");
+		pacman4.setPosition(24.0,20.0);
+		pacman4.setCollisionRadius(0.5);
+		universe.place(pacman4);
+
+		pacman5 = new Pacman5("data\\images\\E_images\\character\\pacman_yellow.gif");
+		pacman5.setPosition(26.0,20.0);
+		pacman5.setCollisionRadius(0.5);
+		universe.place(pacman5);
+
+		pacman6 = new Pacman6("data\\images\\E_images\\character\\pacman_yellow.gif");
+		pacman6.setPosition(28.0,20.0);
+		pacman6.setCollisionRadius(0.5);
+		universe.place(pacman6);
 
 
 		setViewRange(65, 65);
@@ -311,11 +350,37 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 			cleargamen.setPosition(24.0,24.0);
 			universe.place(cleargamen);
 			score++;
+		}
+
+			if(hp==5) {
+				universe.displace(pacman6);
+			}
+
+			if(hp==4) {
+				universe.displace(pacman5);
+			}
+
+			if(hp==3) {
+				universe.displace(pacman4);
+			}
+
+			if(hp==2) {
+				universe.displace(pacman3);
+
+			}
+
+			if(hp==1) {
+				universe.displace(pacman2);
+			}
+
+			if(hp==0) {
+				universe.displace(pacman1);
+			}
 }
 
 
 
-	}
+
 
 	// public void progress(RWTVirtualController virtualController, long
 	// interval) {
