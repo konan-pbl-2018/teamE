@@ -7,6 +7,7 @@ import framework.RWT.RWTVirtualController;
 import framework.audio.BGM3D;
 import framework.audio.Sound3D;
 import framework.game2D.Position2D;
+import framework.game2D.Sprite;
 import framework.gameMain.IGameState;
 import framework.gameMain.SimpleMazeGame;
 import framework.model3D.Universe;
@@ -35,8 +36,9 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	private boolean disableControl = false;
 
 	int score=0;
-	int hp=10;
+	int hp=6;
 	int debg=0;
+	Sprite cleargamen;
 	private long lastTime;
 	private IGameState initialGameState = null;
 	private IGameState finalGameState = null;
@@ -304,10 +306,17 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 	//	System.out.println("ƒAƒCƒeƒ€Šl“¾");
 
 	}
+		if(score==1) {
+			cleargamen = new Sprite("data\\images\\E_images\\screen\\CREARgamen2.png", 10.0f);
+			cleargamen.setPosition(24.0,24.0);
+			universe.place(cleargamen);
 
-
+			score++;
 }
 
+
+
+	}
 
 	// public void progress(RWTVirtualController virtualController, long
 	// interval) {
