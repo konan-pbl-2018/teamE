@@ -52,24 +52,24 @@ public class TemplateMazeGame2D extends SimpleMazeGame {
 		mazeSpriteEnemy.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemy);
 
-		mazeSpriteEnemyB= new MazeSpriteEnemyB("data\\images\\E_images\\character\\pacman_teki.png");
+		mazeSpriteEnemyB= new MazeSpriteEnemyB("data\\images\\E_images\\character\\nambo.gif");
 		mazeSpriteEnemyB.setPosition(26.0,46.0);
 		mazeSpriteEnemyB.setCollisionRadius(0.5);
 		universe.place(mazeSpriteEnemyB);
 
-		EnemyD= new EnemyD("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyD= new EnemyD("data\\images\\E_images\\character\\nambo.gif");
 		EnemyD.setPosition(8.0,16.0);
 		EnemyD.setCollisionRadius(0.5);
 		universe.place(EnemyD);
 
 
-		EnemyC= new EnemyC("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyC= new EnemyC("data\\images\\E_images\\character\\nambo.gif");
 		EnemyC.setPosition(34.0,15.0);
 		EnemyC.setCollisionRadius(0.5);
 		universe.place(EnemyC);
 
 
-		EnemyE= new EnemyE("data\\images\\E_images\\character\\pacman_teki.png");
+		EnemyE= new EnemyE("data\\images\\E_images\\character\\nambo.gif");
 		EnemyE.setPosition(4.0,34.0);
 		EnemyE.setCollisionRadius(0.5);
 		universe.place(EnemyE);
